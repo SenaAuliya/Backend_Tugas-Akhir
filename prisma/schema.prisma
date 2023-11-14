@@ -1,0 +1,52 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Matematika {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  createdAt   DateTime @default(now())
+  updateAt    DateTime @updatedAt
+}
+
+model Sejarah {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  createdAt   DateTime @default(now())
+  updateAt    DateTime @updatedAt
+}
+
+model Inggris {
+  id        Int      @id @default(autoincrement())
+  title     String
+  rumus     String @unique
+  contoh    String
+  createdAt DateTime @default(now())
+  updateAt  DateTime @updatedAt
+}
+
+model Jawa {
+  id        Int      @id @default(autoincrement())
+  indonesia String
+  jawa      String
+  createdAt DateTime @default(now())
+  updateAt  DateTime @updatedAt
+}
+
+model Puisi {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  createdAt   DateTime @default(now())
+  updateAt    DateTime @updatedAt
+}
